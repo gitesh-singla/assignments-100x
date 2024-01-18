@@ -9,5 +9,20 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+    // const start = new Date().getTime();
+    const start = performance.now(); //preformance object gives more accurate timestamp
+
+    let sum=0;
+    for(let i=1; i<=n; i++){
+        sum += i;
+    }
+    // const end = new Date().getTime();
+    const end = performance.now();
+    const timeDiff = end - start;
+    // const seconds = Math.floor(timeDiff/1000);
+    console.log("time difference is " + timeDiff  + " sum is : " + sum);
 }
+
+calculateTime(100);
+calculateTime(100000);
+calculateTime(1000000000);
